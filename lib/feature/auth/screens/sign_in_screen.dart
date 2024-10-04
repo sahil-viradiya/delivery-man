@@ -125,9 +125,11 @@ class SignInViewScreen extends StatelessWidget {
                     buttonText: 'sign_in'.tr,
                     onPressed: () => _login(authController, _phoneController, _passwordController, countryDialCode!, context),
                   ) : const Center(child: CircularProgressIndicator()),
+
                   SizedBox(height: Get.find<SplashController>().configModel!.toggleDmRegistration! ? Dimensions.paddingSizeSmall : 0),
 
-                  Get.find<SplashController>().configModel!.toggleDmRegistration! ? TextButton(
+                  // Get.find<SplashController>().configModel!.toggleDmRegistration! ?
+                  TextButton(
                     style: TextButton.styleFrom(
                       minimumSize: const Size(1, 40),
                     ),
@@ -141,7 +143,8 @@ class SignInViewScreen extends StatelessWidget {
                       TextSpan(text: 'delivery_man'.tr, style: robotoMedium.copyWith(color: Theme.of(context).textTheme.bodyLarge!.color)),
 
                     ])),
-                  ) : const SizedBox(),
+                  )
+                      // : const SizedBox(),
 
                 ]);
               }),
